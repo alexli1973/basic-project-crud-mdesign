@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-add-item (newCarAdd)="newCarAdded($event)"></app-add-item>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Items List</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Item ID</th>
+      <th>Item Name</th>
+      <th>Item Model</th>
+      <th>Date</th>
+      <th>Percent %</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let e of cars">
+      <td>{{e.id}}</td>
+      <td>{{e.name}}</td>
+      <td>{{e.model}}</td>
+      <td>{{e.date | date}}</td>
+      <td><mat-progress-bar mode="determinate" value="{{e.percent}}"></mat-progress-bar></td>
+      <td><button mat-icon-button [routerLink]="['/system/items', e.id]"><mat-icon>mode_edit</mat-icon></button></td>
+      <td><button mat-icon-button (click)= "deleteCar(e)"><mat-icon>delete_forever</mat-icon></button></td>
+    </tr>
+

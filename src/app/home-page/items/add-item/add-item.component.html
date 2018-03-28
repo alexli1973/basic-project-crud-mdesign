@@ -1,0 +1,32 @@
+<form [formGroup] = "form" (ngSubmit)="saveForm()">
+  <div class="form-group">
+    <label for="name">Car</label>
+    <input type="text" class="form-control" id="name" formControlName="name">
+  </div>
+  <div class="alert"
+       *ngIf="form.controls['name'].invalid && form.controls['name'].touched">Field name can not be empty
+  </div>
+  <div class="form-group">
+    <label for="model">Model</label>
+    <input type="text" class="form-control" id="model" formControlName="model">
+  </div>
+  <div class="alert"
+       *ngIf="form.controls['model'].invalid && form.controls['model'].touched">Field model can not be empty
+  </div>
+  <div class="form-group">
+    <label for="percent">Percent</label>
+    <input type="text" class="form-control" id="percent" formControlName="percent">
+  </div>
+  <div class="alert"
+       *ngIf="form.controls['model'].invalid && form.controls['model'].touched">Field percent can not be empty
+  </div>
+  <div class="form-group">
+    <label >Date</label>
+    <mat-form-field>
+      <input formControlName="date" matInput [matDatepicker]="myDatepicker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Add</button>
+</form>

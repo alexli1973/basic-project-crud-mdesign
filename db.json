@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@google.com",
+      "password": "admin",
+      "name": "Admin"
+    }
+  ],
+  "cars": [
+    {
+      "name": "alfa romero",
+      "model": "xs",
+      "percent": "34",
+      "date": "2018-03-29T21:00:00.000Z",
+      "id": 2
+    },
+    {
+      "name": "bmw",
+      "model": "7",
+      "percent": "89",
+      "date": "2018-03-13T22:00:00.000Z",
+      "id": 3
+    }
+  ]
+}
